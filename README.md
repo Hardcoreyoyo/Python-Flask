@@ -1,0 +1,10 @@
+# Python-Flask
+
+```sh
+PythonConnectMsSqlServer
+FlaskRegisterLoginOnlyStandard
+FlaskRegisterLoginOnlyStandardSessionCookiesProtectTest2
+FlaskWTFormsTest1
+FlaskDataBaseTest1
+FlaskLoginTest1
+```
