@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+{% if get_flashed_messages() %}
+   <div style="color: tomato">{{ get_flashed_messages()[0] }}</div>
+{% endif %}
+
+
+
+<br>
+<br>
+<br>
+<br>
+<h1>登入</h1>
+<form method="POST" action="{{ url_for('Login') }}" novalidate>
+{{ form.hidden_tag() }}
+
+{{ form.user_id }}
+{% for message in form.user_id.errors %}
+    <div style="color: crimson">{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+{{ form.password }}
+{% for message in form.password.errors %}
+    <div style="color: crimson">{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.submit }}
+
+
+</form>
+
+
+
+<br>
+<br>
+<br>
+
+{% if current_user.is_authenticated %}
+
+{% else %}
+    <a href="{{ url_for('Home') }}" >首頁</a>
+    <a href="{{ url_for('Register') }}" >註冊</a>
+    <a href="{{ url_for('ForgotPasswordEmail') }}" >忘記密碼</a>
+{% endif %}
+
+
+
+
+</body>
+</html>

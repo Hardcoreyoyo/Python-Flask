@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UserCenter</title>
+</head>
+<body>
+<h1>會員中心</h1>
+
+    {% if get_flashed_messages() %}
+        <div style="color: cornflowerblue">{{ get_flashed_messages()[0] }}</div>
+    {% endif %}
+<br>
+<br>
+<br>
+<h2>會員資料</h2>
+<br>
+<br>
+<h4>
+<ul>
+　<li>姓名</li>{{ UserCenterInfo.username }}
+<br>
+<br>
+　<li>信箱</li>{{ UserCenterInfo.email }}
+</ul>
+</h4>
+
+<br>
+<br>
+<br>
+
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('Home') }}" >首頁</a>
+    <a href="{{ url_for('Logout') }}" >登出</a>
+    <a href="{{ url_for('PasswordReset') }}" >更改密碼</a>
+{% else %}
+{% endif %}
+
+
+</body>
+</html>

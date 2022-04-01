@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<h1>註冊</h1>
+<form method="POST" action="{{ url_for('Register') }}" novalidate>
+{{ form.hidden_tag() }}
+
+
+{{ form.user_id }}
+{% for message in form.user_id.errors %}
+    <div style="color: crimson">{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.email }}
+{% for message in form.email.errors %}
+    <div style="color: crimson">{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.password }}
+{% for message in form.password.errors %}
+    <div style="color: crimson">{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.password2 }}
+{% for message in form.password2.errors %}
+    <div style="color: crimson">{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.submit }}
+
+
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<a href="{{ url_for('Home') }}" >首頁</a>
+
+
+
+</body>
+</html>
