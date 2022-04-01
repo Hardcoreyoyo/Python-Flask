@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginFlaskVer</title>
+</head>
+<body>
+
+ {% with messages = get_flashed_messages() %}
+   {% if messages %}
+        {% for message in messages %}
+         <div>{{ message }}</div>
+        {% endfor %}
+  {% endif %}
+ {% endwith %}
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<form method="POST" action="{{ url_for('Login_FlaskVer') }}">
+{{ form.hidden_tag() }}
+
+{% for message in form.user_id.errors %}
+    <li style="color: brown">{{ message }}</li>
+{% endfor %}
+
+{{ form.user_id }}
+
+<br>
+<br>
+{{ form.password }}
+{#{% for message in form.password.errors %}#}
+{#    <div>{{ message }}</div>#}
+{#{% endfor %}#}
+<br>
+<br>
+{#{{ form.fuck}}#}
+{#{{ form.fuck.label() }}#}
+{#{% for message in form.fuck.errors %}#}
+{#    <div>{{ message }}</div>#}
+{#{% endfor %}#}
+
+{{ form.submit }}
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+
+
+</form>
+
+
+<br>
+    <br>
+    <br>
+<a href="{{ url_for('home') }}" >首頁</a>
+
+
+
+</body>
+</html>
