@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+{%  for message in check_message %}
+    <li>{{ message }}</li>
+{% endfor %}
+
+<form method="post">
+<h1>暱稱</h1><input  type='text' name="username" value={{Register_Form_Data[0]}}><br>
+
+<h1>帳號</h1><input   type='text' name="userid" value={{Register_Form_Data[1]}}><br>
+
+<h1>密碼</h1><input  type='password' name="userpw" value={{Register_Form_Data[2]}}><br>
+<h1>確認密碼</h1><input  type='password' name="userpw2" value={{Register_Form_Data[3]}}><br>
+
+<h1>信箱</h1><input  type='text' name="useremail" value={{Register_Form_Data[4]}}><br>
+
+
+<input  value="送出" type='submit' name="send">
+</form>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="{{ url_for('home') }}" >首頁</a>
+<a href="{{ url_for('Register_WTF_Def') }}" >WTF註冊</a>
+<a href="{{ url_for('Login_FlaskVer') }} ">登入</a>
+
+
+</body>
+</html>

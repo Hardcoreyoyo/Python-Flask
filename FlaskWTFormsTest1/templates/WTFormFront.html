@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WTFormFront</title>
+</head>
+<body>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{#<form method="post">#}
+{#<h1>暱稱</h1><input  type='text' name="username"><br>#}
+{#<h1>信箱</h1><input  type='text' name="useremail" ><br>#}
+{##}
+{##}
+{#<input  value="送出" type='submit' name="send">#}
+{#</form>#}
+
+
+<form method="POST" action="{{ url_for("WTFormsFunc1") }}" novalidate>
+{{ form.csrf_token }}
+
+  {% if form.username.errors %}
+    {% for error in form.username.errors %}
+        {{ error }}
+    {% endfor %}
+  {% endif %}
+    {{ form.username.label }}
+<br>
+
+    {{ form.username(size=20) }}
+<br>
+<br>
+<br>
+  {% if form.email.errors %}
+    {% for error in form.email.errors %}
+        {{ error }}
+    {% endfor %}
+  {% endif %}
+    {{ form.email.label }}
+<br>
+    {{ form.email(size=50) }}
+<br>
+<br>
+<br>
+    <input type="submit" value="GO">
+</form>
+
+
+<a href=""></a>
+</body>
+</html>

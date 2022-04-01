@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UserCenter</title>
+</head>
+<body>
+<h1>我是會員中心</h1>
+
+    {% if get_flashed_messages() %}
+        {{ get_flashed_messages()[0] }}
+    {% endif %}
+<br>
+<br>
+<br>
+<h1>會員資料</h1>
+<h3>
+    姓名
+
+    {{ UserCenterInfo.username }}
+</h3>
+<h3>
+    信箱
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {{ UserCenterInfo.email }}
+</h3>
+
+<br>
+<br>
+<br>
+<a href="http://127.0.0.1:5000/home" >首頁</a>
+<a href="http://127.0.0.1:5000/logout" >登出</a>
+
+</body>
+</html>

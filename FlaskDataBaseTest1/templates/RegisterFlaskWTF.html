@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegisterFlaskWTF</title>
+</head>
+<body>
+<form method="POST" action="{{ url_for('Register_WTF_Def') }}" >
+{{ form.hidden_tag() }}
+
+
+{{ form.user_id }}
+{% for message in form.user_id.errors %}
+    <div>{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.email }}
+{% for message in form.email.errors %}
+    <div>{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.password }}
+{% for message in form.password.errors %}
+    <div>{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.password2 }}
+{% for message in form.password2.errors %}
+    <div>{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.submit }}
+
+
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<a href="{{ url_for('home') }}" >首頁</a>
+<a href="{{ url_for('register') }}">註冊</a>
+<a href="{{ url_for('Login_FlaskVer') }} ">登入</a>
+
+
+</body>
+</html>

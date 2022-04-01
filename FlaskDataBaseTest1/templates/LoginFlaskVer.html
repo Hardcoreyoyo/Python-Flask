@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginFlaskVer</title>
+</head>
+<body>
+
+{% if get_flashed_messages() %}
+    {{ get_flashed_messages()[0] }}
+{% endif %}
+
+
+
+<br>
+<br>
+<br>
+<br>
+{#action="http://127.0.0.1:5000/login?next=%2Fhttps://www.google.co.jp/"#}
+{#next=https%3A%2F%2Fwww.facebook.com%2F#}
+{#action="http://127.0.0.1:5000/login?next=https%3A%2F%2Fwww.google.com%2F"#}
+<form method="POST"  >
+{{ form.hidden_tag() }}
+
+{{ form.user_id }}
+{% for message in form.user_id.errors %}
+    <div>{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+{{ form.password }}
+{% for message in form.password.errors %}
+    <div>{{ message }}</div>
+{% endfor %}
+<br>
+<br>
+
+
+{{ form.submit }}
+
+
+</form>
+
+
+
+
+
+
+
+
+
+{#<form method="POST" >#}
+{##}
+{#<h1>帳號</h1><input   type='text' name="userid" value={{Register_Form_Data[0]}}><br>#}
+{#<h1>密碼</h1><input  type='password' name="userpw" value={{Register_Form_Data[1]}}><br>#}
+{#<h1>登入</h1><input  value="登入" type='submit' name="send"><br>#}
+{#</form>#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+    <br>
+    <br>
+<a href="{{ url_for('home') }}" >首頁</a>
+
+
+
+</body>
+</html>

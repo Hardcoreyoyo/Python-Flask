@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataBaseAddTest1</title>
+</head>
+<body>
+
+
+{## 新增資料至資料庫#}
+        {% for user in a2 %}
+           <li> {{ user.pid }}. {{ user.name }} - {{ user.price }} - {{ user.img }} - {{ user.insert_time }}</li>
+        {% endfor %}
+<br>
+<br>
+<br>
+{{ a1 }}
+{{ a3 }}
+
+
+{## 刪除資料#}
+        {% for user in b4 %}
+           <li> {{ user.pid }}. {{ user.name }} - {{ user.price }} - {{ user.img }} - {{ user.insert_time }}</li>
+        {% endfor %}
+<br>
+<br>
+<br>
+{{ b2 }}
+{{ b3 }}
+
+
+
+{## 資料更新 #}
+        {% for user in c4 %}
+           <li> {{ user.pid }}. {{ user.name }} - {{ user.price }} - {{ user.img }} - {{ user.insert_time }}</li>
+        {% endfor %}
+<br>
+<br>
+<br>
+{{ c2 }}
+{{ c3 }}
+
+
+</body>
+</html>

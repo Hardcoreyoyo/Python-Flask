@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataBaseQueryTest1.html</title>
+</head>
+<body>
+
+{# 查詢指定個別直的欄位數值 #}
+        {% for user in Find1 %}
+           <li> {{ user.price }}</li>
+        {% endfor %}
+<br>
+<br>
+<br>
+        {% for user in Find2 %}
+           <li> {{ user.name }}</li>
+        {% endfor %}
+
+
+
+
+{# 查詢全部 需要再HTML迭代出來#}
+        {% for user in a %}
+           <li> {{ user.id }}. {{ user.name }} - {{ user.price }} - {{ user.img }} - {{ user.insert_time }}</li>
+        {% endfor %}
+
+
+{#  filter_by  方法 #}
+        {% if c1 %}
+            {{ c1.name }}
+        {% endif%}
+
+        {% if c %}
+            {{ c.price}}
+        {% endif%}
+
+
+{#  order_by 方法 #}
+        {% for user in d %}
+           <li>{{ user.price }} </li>
+        {% endfor %}
+<br>
+<br>
+<br>
+        {% for user in d2 %}
+           <li>{{ user.price }} </li>
+        {% endfor %}
+
+
+
+{##  搜尋 by primary key 方法#}
+
+
+        {% if e %}
+{{ e.pid }}E
+        {% endif%}
+
+        {% if e1 %}
+{{ e1.pid }}E1
+        {% endif%}
+
+
+{##  不同於 filter_by   在 filter 方法中 支持更多複雜的條件搜尋#}
+        {% for user in f %}
+           <li>{{ user.name }} </li>
+        {% endfor %}
+<br>
+<br>
+<br>
+        {% for user in f2 %}
+           <li>{{ user.pid }} </li>
+        {% endfor %}
+
+
+
+{## 判斷查詢值是否為空#}
+{## filter_by 與 filter 不同#}
+
+
+            {% for user in g %}
+               <li>{{ user.name }}</li>
+            {% endfor %}
+{{ k }}
+
+
+{#{{ g.price }}#}
+
+
+
+
+</body>
+</html>
